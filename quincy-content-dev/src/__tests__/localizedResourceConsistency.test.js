@@ -39,6 +39,8 @@ describe("File loading test", () => {
             console.log("********", doc);
         }
     );
+
+    test("Compare the loading files from the lesson directories and the yml files", () => {});
 });
 
 function getLessonDirectories(directoryPath, callback) {
