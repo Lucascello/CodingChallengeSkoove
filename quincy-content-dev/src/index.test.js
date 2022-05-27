@@ -59,7 +59,7 @@ describe("File loading test", () => {
             mapSizes(`${__dirname}/content/beginner1/lesson2`)
         );
 
-        console.log("**********", filePath);
+        // console.log("**********", filePath);
         expect(filePath).toContain("D_D_1.svg");
     });
 
