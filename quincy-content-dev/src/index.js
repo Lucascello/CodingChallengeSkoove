@@ -28,7 +28,7 @@ function logSizes(directoryPath) {
     });
 }
 
-logSizes(`${__dirname}/content`);
+//logSizes(`${__dirname}/content`);
 
 function mapSizes(directoryPath) {
     const dirContent = fs.readdirSync(directoryPath, { withFileTypes: true });
@@ -39,17 +39,33 @@ function mapSizes(directoryPath) {
         const path = directoryPath + "/" + item.name;
         if (item.isFile()) {
             const metaData = fs.statSync(path);
-            // console.log("What's this", `${item.name}: ${metaData.size}`);
-            // const filePath = `${item.name}: ${metaData.size}`;
+
             objFromMap[item.name] = metaData.size;
-            //console.log(objFromMap);
         } else {
             let nextObj = mapSizes(path);
             objFromMap[item.name] = nextObj;
-            //console.log("Who are you", objFromMap);
         }
     });
     return objFromMap;
 }
-// mapSizes(`${__dirname}/files`);
-console.log(JSON.stringify(mapSizes(`${__dirname}/content`), null, 2));
+
+// console.log(JSON.stringify(mapSizes(`${__dirname}/content`), null, 2));
+
+const filePath = Object.assign(
+    JSON.stringify(mapSizes(`${__dirname}/content`))
+);
+
+console.log("**********", filePath);
+
+console.log(
+    "###########",
+    filePath.includes(
+        '"short_long_notes_combined.aifc":150092,"short_notes.aifc":79304}'
+    )
+);
+
+const prettyFilePath = Object.assign(
+    JSON.stringify(mapSizes(`${__dirname}/content`), null, 2)
+);
+
+console.log("++++++++++", prettyFilePath);
