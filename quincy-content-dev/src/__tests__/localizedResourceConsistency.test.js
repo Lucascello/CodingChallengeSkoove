@@ -1,7 +1,7 @@
 const fs = require("fs");
 const glob = require("fast-glob");
 const path = require("path");
-
+// const yaml = require("js-yaml");
 
 const presetLocale = "en";
 const otherLocales = ["de"];
@@ -31,3 +31,11 @@ describe("Test-Suite localized file Consistency Check", () => {
         }
     );
 });
+
+// const doc = yaml.load(
+//     fs.readFileSync(
+//         "src/content/beginner1/lesson2/4519_note_values/4519_note_values.yml",
+//         "utf8"
+//     )
+// );
+// console.log("#######", doc);
