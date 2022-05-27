@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-function logSizes(directoryPath) {
+function checkFiles(directoryPath) {
     fs.readdir(directoryPath, { withFileTypes: true }, (err, content) => {
         if (err) {
             console.log(err);
@@ -22,13 +22,13 @@ function logSizes(directoryPath) {
                     }
                 );
             } else {
-                logSizes(`${directoryPath}/${content[i].name}`);
+                checkFiles(`${directoryPath}/${content[i].name}`);
             }
         }
     });
 }
 
-//logSizes(`${__dirname}/content`);
+//checkFiles(`${__dirname}/content`);
 
 function mapSizes(directoryPath) {
     const dirContent = fs.readdirSync(directoryPath, { withFileTypes: true });
