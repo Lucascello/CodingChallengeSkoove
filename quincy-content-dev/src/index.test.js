@@ -90,6 +90,8 @@ describe("File loading test", () => {
     test("Compare the handvideo.src and the yml file(4519_note_values.yml)", () => {
         const filePath = JSON.stringify(mapSizes(`${__dirname}/content`));
 
-        expect(filePath).toContain('"video":{"dd.mp4":}');
+        expect(filePath).toContain(
+            '"lesson2":{"4519_note_values":{"4519_note_values.yml":1682,"audio":{"D_D_1.aifc":160292,"ddFddF_1.aifc":160292,"dd_1.aifc":160292},"expect":{"DDffDDff.csv":126,"ddFddF_1.csv":100,"dd_1.csv":74},"img":{"dd_1.svg":17276,"de":{"DDffDDff.svg":27270,"D_D_1.svg":12409},"en":{"DDffDDff.svg":27270,"D_D_1.svg":12409}},"index.yml":45,"video":{"dd.mp4"'
+        );
     });
 });
