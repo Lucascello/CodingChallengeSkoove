@@ -23,6 +23,7 @@ describe("File existing test 4516_long_short_notes", () => {
     }
 
     // console.log(
+    //     "++++++++",
     //     JSON.stringify(mapFoldersAndFiles(`${__dirname}/content`), null, 2)
     // );
 
@@ -31,7 +32,7 @@ describe("File existing test 4516_long_short_notes", () => {
             mapFoldersAndFiles(`${__dirname}/content/beginner1/lesson1`)
         );
 
-        console.log("**********", filePath);
+        // console.log("**********", filePath);
         expect(filePath).toContain("D_D_1.svg");
     });
 
@@ -69,7 +70,7 @@ describe("File existing test 4516_long_short_notes", () => {
 
     test("Compare the flyer.scr and the yml file (4516_note_values.yml) on segment 2", () => {
         const filePath = JSON.stringify(
-            mapFoldersAndFiles(`${__dirname}/content/beginner1/lesson1`)
+            mapFoldersAndFiles(`${__dirname}/content`)
         );
 
         expect(filePath).toContain("dynamic_marks.svg");
@@ -149,9 +150,9 @@ describe("File existing test 4516_long_short_notes", () => {
 
     test("Compare the startVoiceOver.src and the yml file (4516_note_values.yml) on segment 4", () => {
         const filePath = JSON.stringify(
-            mapFoldersAndFiles(`${__dirname}/content/beginner1/lesson1`)
+            mapFoldersAndFiles(`${__dirname}/content`)
         );
 
-        expect(filePath).toContain("rhythm/reminder_note_duration.aifc");
+        expect(filePath).toContain("reminder_note_duration.aifc");
     });
 });
