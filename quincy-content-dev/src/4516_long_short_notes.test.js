@@ -1,10 +1,10 @@
 const mapFoldersAndFiles = require("./index");
 
 describe("File existing test 4516_long_short_notes", () => {
-    console.log(
-        "++++++++",
-        JSON.stringify(mapFoldersAndFiles(`${__dirname}/content`), null, 2)
-    );
+    // console.log(
+    //     "++++++++",
+    //     JSON.stringify(mapFoldersAndFiles(`${__dirname}/content`), null, 2)
+    // );
 
     const filePath = JSON.stringify(
         mapFoldersAndFiles(`${__dirname}/content/beginner1/lesson1`)
